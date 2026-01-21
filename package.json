@@ -1,0 +1,49 @@
+{
+  "name": "terragrunt",
+  "displayName": "Terragrunt",
+  "description": "Terragrunt language support with formatting and linting",
+  "version": "0.0.1",
+  "publisher": "mpalu",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Formatters",
+    "Linters",
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "terragrunt",
+        "aliases": [
+          "Terragrunt",
+          "terragrunt"
+        ],
+        "extensions": [
+          ".hcl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "terragrunt",
+        "scopeName": "source.terragrunt",
+        "path": "./syntaxes/terragrunt.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.30",
+    "@types/vscode": "^1.108.1",
+    "typescript": "^5.9.3"
+  }
+}
